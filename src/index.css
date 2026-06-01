@@ -1,0 +1,186 @@
+/* ==========================================================================
+   Base Design System & Global Variables: "Neo-Synth Dark"
+   ========================================================================== */
+
+:root {
+  --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-display: 'Outfit', var(--font-sans);
+  --font-mono: 'JetBrains Mono', monospace;
+
+  /* Color Palette */
+  --bg-main: #070913;
+  --bg-card: rgba(13, 17, 34, 0.65);
+  --bg-card-hover: rgba(22, 29, 56, 0.8);
+  --border-color: rgba(255, 255, 255, 0.06);
+  --border-color-glow: rgba(0, 242, 254, 0.25);
+  
+  --text-primary: #F3F4F6;
+  --text-secondary: #9CA3AF;
+  --text-muted: #6B7280;
+
+  /* Gradients */
+  --grad-cyan-blue: linear-gradient(135deg, #00F2FE 0%, #4FACFE 100%);
+  --grad-indigo-purple: linear-gradient(135deg, #6366F1 0%, #A855F7 100%);
+  --grad-sunset: linear-gradient(135deg, #FF5E62 0%, #FF9966 100%);
+  --grad-dark: linear-gradient(180deg, #0D1122 0%, #070913 100%);
+  --grad-emerald: linear-gradient(135deg, #10B981 0%, #059669 100%);
+
+  /* Neon Colors */
+  --neon-cyan: #00F2FE;
+  --neon-indigo: #6366F1;
+  --neon-emerald: #10B981;
+  --neon-rose: #F43F5E;
+  --neon-amber: #F59E0B;
+
+  /* Shadows & Blurs */
+  --glass-blur: blur(20px);
+  --shadow-glow-cyan: 0 0 25px rgba(0, 242, 254, 0.15);
+  --shadow-glow-indigo: 0 0 25px rgba(99, 102, 241, 0.15);
+  --shadow-heavy: 0 20px 40px -15px rgba(0, 0, 0, 0.7);
+}
+
+/* ==========================================================================
+   Resets & Basics
+   ========================================================================== */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-main);
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(99, 102, 241, 0.1) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(0, 242, 254, 0.1) 0px, transparent 50%);
+  background-attachment: fixed;
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  min-height: 100vh;
+  overflow-x: hidden;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  position: relative;
+  z-index: 1;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-main);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 242, 254, 0.3);
+}
+
+/* ==========================================================================
+   Typography
+   ========================================================================== */
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+/* ==========================================================================
+   Animations
+   ========================================================================== */
+
+@keyframes pulse-wave {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(0, 242, 254, 0.5);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 20px rgba(0, 242, 254, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(0, 242, 254, 0);
+  }
+}
+
+@keyframes pulse-wave-indigo {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(99, 102, 241, 0.5);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 20px rgba(99, 102, 241, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(99, 102, 241, 0);
+  }
+}
+
+@keyframes voice-bar-grow {
+  0%, 100% {
+    height: 10px;
+  }
+  50% {
+    height: 60px;
+  }
+}
+
+@keyframes rotate-gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes countdown-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(244, 63, 94, 0.4);
+    background-color: rgba(244, 63, 94, 0.1);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(244, 63, 94, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(244, 63, 94, 0);
+  }
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
