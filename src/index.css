@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Base Design System & Global Variables: "Neo-Synth Dark"
+   Base Design System & Global Variables: "Neo-Synth"
    ========================================================================== */
 
 :root {
@@ -7,7 +7,7 @@
   --font-display: 'Outfit', var(--font-sans);
   --font-mono: 'JetBrains Mono', monospace;
 
-  /* Color Palette */
+  /* Color Palette (Dark Theme Default) */
   --bg-main: #070913;
   --bg-card: rgba(13, 17, 34, 0.65);
   --bg-card-hover: rgba(22, 29, 56, 0.8);
@@ -17,6 +17,18 @@
   --text-primary: #F3F4F6;
   --text-secondary: #9CA3AF;
   --text-muted: #6B7280;
+
+  /* Form & Interactive Elements (Dark Theme Default) */
+  --bg-input: rgba(0, 0, 0, 0.25);
+  --bg-input-focus: rgba(0, 0, 0, 0.4);
+  --border-input: rgba(255, 255, 255, 0.08);
+  --bg-btn-sec: rgba(255, 255, 255, 0.06);
+  --bg-btn-sec-hover: rgba(255, 255, 255, 0.1);
+  --bg-dropzone: rgba(255, 255, 255, 0.01);
+  --border-dropzone: rgba(255, 255, 255, 0.12);
+  --bg-circle-track: rgba(255, 255, 255, 0.05);
+  --bg-avatar-circle: radial-gradient(circle, rgba(13,17,34,1) 0%, rgba(7,9,19,1) 100%);
+  --border-avatar-circle: rgba(255, 255, 255, 0.05);
 
   /* Gradients */
   --grad-cyan-blue: linear-gradient(135deg, #00F2FE 0%, #4FACFE 100%);
@@ -37,6 +49,38 @@
   --shadow-glow-cyan: 0 0 25px rgba(0, 242, 254, 0.15);
   --shadow-glow-indigo: 0 0 25px rgba(99, 102, 241, 0.15);
   --shadow-heavy: 0 20px 40px -15px rgba(0, 0, 0, 0.7);
+}
+
+/* ==========================================================================
+   Light Theme Override Variables
+   ========================================================================== */
+
+:root[data-theme="light"] {
+  --bg-main: #F1F5F9;
+  --bg-card: rgba(255, 255, 255, 0.75);
+  --bg-card-hover: rgba(255, 255, 255, 0.9);
+  --border-color: rgba(0, 0, 0, 0.08);
+  --border-color-glow: rgba(99, 102, 241, 0.35);
+
+  --text-primary: #0F172A;
+  --text-secondary: #475569;
+  --text-muted: #94A3B8;
+
+  /* Form & Interactive Elements (Light Theme Overrides) */
+  --bg-input: rgba(255, 255, 255, 0.85);
+  --bg-input-focus: #FFFFFF;
+  --border-input: rgba(0, 0, 0, 0.12);
+  --bg-btn-sec: rgba(0, 0, 0, 0.04);
+  --bg-btn-sec-hover: rgba(0, 0, 0, 0.08);
+  --bg-dropzone: rgba(255, 255, 255, 0.5);
+  --border-dropzone: rgba(0, 0, 0, 0.1);
+  --bg-circle-track: rgba(0, 0, 0, 0.08);
+  --bg-avatar-circle: radial-gradient(circle, #E2E8F0 0%, #CBD5E1 100%);
+  --border-avatar-circle: rgba(0, 0, 0, 0.08);
+
+  --shadow-glow-cyan: 0 0 25px rgba(0, 242, 254, 0.06);
+  --shadow-glow-indigo: 0 0 25px rgba(99, 102, 241, 0.06);
+  --shadow-heavy: 0 20px 40px -15px rgba(15, 23, 42, 0.06);
 }
 
 /* ==========================================================================

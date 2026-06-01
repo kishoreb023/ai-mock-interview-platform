@@ -116,8 +116,8 @@
 }
 
 .text-input, .textarea-input {
-  background: rgba(0, 0, 0, 0.25);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: var(--bg-input);
+  border: 1px solid var(--border-input);
   border-radius: 12px;
   color: var(--text-primary);
   padding: 0.95rem;
@@ -130,7 +130,7 @@
 .text-input:focus, .textarea-input:focus {
   border-color: var(--neon-cyan);
   box-shadow: 0 0 12px rgba(0, 242, 254, 0.15);
-  background: rgba(0, 0, 0, 0.4);
+  background: var(--bg-input-focus);
 }
 
 .textarea-input {
@@ -140,8 +140,8 @@
 
 /* Upload Dropzone Styling */
 .upload-dropzone {
-  border: 2px dashed rgba(255, 255, 255, 0.12);
-  background: rgba(255, 255, 255, 0.01);
+  border: 2px dashed var(--border-dropzone);
+  background: var(--bg-dropzone);
   border-radius: 12px;
   padding: 1.5rem;
   text-align: center;
@@ -199,7 +199,7 @@
 }
 
 .btn-template {
-  background: rgba(255, 255, 255, 0.04);
+  background: var(--bg-btn-sec);
   border: 1px solid var(--border-color);
   color: var(--text-secondary);
   padding: 0.5rem 1rem;
@@ -255,13 +255,13 @@
 }
 
 .btn-secondary {
-  background: rgba(255, 255, 255, 0.06);
+  background: var(--bg-btn-sec);
   color: var(--text-primary);
   border: 1px solid var(--border-color);
 }
 
 .btn-secondary:hover {
-  background: rgba(255, 255, 255, 0.1);
+  background: var(--bg-btn-sec-hover);
   border-color: var(--text-secondary);
 }
 
@@ -331,8 +331,8 @@
   width: 140px;
   height: 140px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(13,17,34,1) 0%, rgba(7,9,19,1) 100%);
-  border: 3px solid rgba(255, 255, 255, 0.05);
+  background: var(--bg-avatar-circle);
+  border: 3px solid var(--border-avatar-circle);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -541,7 +541,7 @@
 
 .timer-circle-bg {
   fill: none;
-  stroke: rgba(255, 255, 255, 0.05);
+  stroke: var(--bg-circle-track);
   stroke-width: 5;
 }
 
@@ -701,7 +701,7 @@
 
 .gauge-bg {
   fill: none;
-  stroke: rgba(255, 255, 255, 0.04);
+  stroke: var(--bg-circle-track);
   stroke-width: 12;
 }
 
@@ -978,3 +978,74 @@
   color: var(--text-secondary);
   font-weight: 600;
 }
+
+/* ==========================================================================
+   Theme Toggle Button Styling
+   ========================================================================== */
+
+.btn-theme-toggle {
+  background: var(--bg-btn-sec);
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  height: 40px;
+  padding: 0 1rem;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  outline: none;
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+}
+
+.btn-theme-toggle:hover {
+  background: var(--bg-btn-sec-hover);
+  color: var(--neon-cyan);
+  border-color: var(--border-color-glow);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-glow-cyan);
+}
+
+.btn-theme-toggle svg {
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-theme-toggle:hover svg {
+  transform: rotate(15deg);
+}
+
+.theme-toggle-text {
+  font-size: 0.85rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.theme-pulse-dot {
+  position: absolute;
+  top: -3px;
+  right: -3px;
+  width: 8px;
+  height: 8px;
+  background-color: var(--neon-cyan);
+  border-radius: 50%;
+  box-shadow: 0 0 8px var(--neon-cyan);
+  animation: theme-dot-pulse 2s infinite;
+}
+
+@keyframes theme-dot-pulse {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(0, 242, 254, 0.7);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 6px rgba(0, 242, 254, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(0, 242, 254, 0);
+  }
+}
+

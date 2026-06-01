@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Terminal, Award } from "lucide-react";
+import React, { useState, useEffect } from "react";
+import { Terminal, Award, Sun, Moon } from "lucide-react";
 import ResumeJDSelector from "./components/ResumeJDSelector";
 import InterviewPanel from "./components/InterviewPanel";
 import AnalyticsReport from "./components/AnalyticsReport";
@@ -9,6 +9,12 @@ function App() {
   const [view, setView] = useState("selector"); // "selector" | "interview" | "report"
   const [interviewConfig, setInterviewConfig] = useState(null);
   const [interviewResults, setInterviewResults] = useState(null);
+  const [theme, setTheme] = useState(() => localStorage.getItem("theme") || "dark");
+
+  useEffect(() => {
+    document.documentElement.setAttribute("data-theme", theme);
+    localStorage.setItem("theme", theme);
+  }, [theme]);
 
   const handleStartInterview = (config) => {
     setInterviewConfig(config);
@@ -43,6 +49,17 @@ function App() {
         </div>
 
         <div style={{ display: "flex", gap: "1rem", alignItems: "center" }}>
+          <button 
+            className="btn-theme-toggle" 
+            onClick={() => setTheme(prev => prev === "dark" ? "light" : "dark")}
+            title={`Switch to ${theme === "dark" ? "Light" : "Dark"} Mode`}
+            aria-label={`Switch to ${theme === "dark" ? "Light" : "Dark"} Mode`}
+          >
+            {theme === "dark" ? <Moon size={16} /> : <Sun size={16} />}
+            <span className="theme-toggle-text">{theme === "dark" ? "Dark Theme" : "Light Theme"}</span>
+            <span className="theme-pulse-dot"></span>
+          </button>
+
           <span className="badge-hackathon">
             <Terminal size={12} style={{ marginRight: "4px", verticalAlign: "middle" }} />
             Hackathon Live
