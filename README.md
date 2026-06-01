@@ -9,6 +9,37 @@
 https://drive.google.com/file/d/1Fo-3cqtfb_xowDXmQT7Kbv4uEoQCwTw5/view?usp=drivesdk
 
 ---
+## 📸 Screenshots
+
+### 🏠 Home Screen
+
+![Home Screen](screenshots/Home%20Screen.png)
+
+The platform allows users to upload resumes, configure job descriptions, select target roles, and initialize the AI-powered interview simulation.
+
+---
+
+### 🎤 Interview Session
+
+![Interview Session](screenshots/Interview%20Session.png)
+
+Candidates interact with the AI interviewer in a real-time interview environment featuring adaptive questioning, voice assistance, and strict response timers.
+
+---
+
+### 📊 Report Analysis
+
+![Report Analysis](screenshots/Report%20Analysis.png)
+
+Performance analytics dashboard showing Accuracy, Clarity, Depth, Relevance, and Time Efficiency metrics along with personalized feedback.
+
+---
+
+### 📈 Final Readiness Report
+
+![Report Screen](screenshots/Report%20Screen.png)
+
+Comprehensive readiness scorecard displaying hiring recommendation, strengths, weaknesses, improvement areas, and interview transcript.
 
 ## 📌 Problem Statement
 
